@@ -1,15 +1,10 @@
-// import logo from './logo.svg';
-// import './App.css';
-import Headerbar from './header/headerbar';
-import Footerbar from './footer/footerbar';
-import Main from './main/main';
+import './css/App.css';
+import Hearderbar from './header/headerbar';
 
 function App() {
   return (
     <div className="App">
-      <Headerbar />
-      <Main />
-      <Footerbar />
+      <Hearderbar/>
     </div>
   );
 }
