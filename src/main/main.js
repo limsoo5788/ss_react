@@ -1,6 +1,10 @@
+import '../css/App.css';
+
 function Main(){
     return(
-        <div></div>
+        <div className="Main">
+      
+        </div>
     )
 }
 

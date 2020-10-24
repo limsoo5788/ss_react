@@ -1,6 +1,10 @@
+import '../css/App.css';
+
 function Footerbar(){
     return(
-        <div></div>
+        <div className="Footerbar">
+      
+        </div>
     )
 }
 
