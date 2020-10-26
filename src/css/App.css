@@ -2,3 +2,6 @@
     height: 100vh;
     width: 100vw;
 }
+.PopOver{
+    border: black 1px solid;
+}

@@ -12,3 +12,16 @@
     background-color: blue;
     border-left: black 1px solid;
 }
+.menuButton{
+    float: right;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 61px;
+    height: 60px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0.2rem;
+}
+.PopOver{
+    border: black 1px solid;
+}

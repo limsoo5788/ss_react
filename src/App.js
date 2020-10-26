@@ -6,12 +6,11 @@ const React = require('react');
 
 function App() {
   const [logined, setLogined] = React.useState(0);
-  const [confirm, setConfirm] = React.useState(0);
+  const [confirm, setConfirm] = React.useState(1);
 
   return (
     <div className="App">
       <Hearderbar confirm={confirm}/>
-      <button onClick={setConfirm(1)}>test</button>
       <Main/>
       <Footerbar/>
     </div>

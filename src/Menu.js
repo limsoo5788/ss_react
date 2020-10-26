@@ -1,15 +1,26 @@
 import './css/App.css';
+import PopOver from './PopOver';
 const React = require('react');
 
-function Menu() {
-    const [key, setKey] = React.useState();
-    const [img, setImg] = React.useState();
-    const [alt, setAlt] = React.useState();
-    const [type, setType] = React.useState();
-    const [confirm, setConfirm] = React.useState();
+function Menu(props) {
+    const [key, setKey] = React.useState(props.items.key);
+    const [img, setImg] = React.useState(props.items.img);
+    const [alt, setAlt] = React.useState(props.items.alt);
+    const [type, setType] = React.useState(props.items.type);
+    //팝오버가 나타나 있는지 확인하기 위한 상태값
+    const [ispop, setIspop] = React.useState(0);
 
+    const onClick = () =>{
+        {ispop? setIspop(0) : setIspop(1)}
+    };
     return (
-        <div className="Menu">
+        <div>
+        <button
+            className="menuButton"
+            onClick = {onClick}>
+            {ispop? alt: "팝업없음"}
+        </button>
+        <a>testttt</a>
         </div>
     );
 }
