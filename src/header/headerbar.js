@@ -12,7 +12,7 @@ function Headerbar(props) {
   return (
     <div className="Headerbar">
       <img src={imglogo} className="AljjamLogo" alt="logo"/>
-      {confirm? <Menus/>: <React.Fragment></React.Fragment>}
+      {confirm?  <Menus/>: <React.Fragment></React.Fragment>}
     </div>
   );
 }
