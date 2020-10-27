@@ -1,8 +1,136 @@
 .PopOver {
     width: 450px;
+    min-height: 175px;
+    border: 3px solid rgb(224, 224, 224);
+    background-color: rgb(224, 224, 224);
 }
 .PopOverContents {
     width: 100%;
-    height: 175px;
-    border: 3px solid rgb(224, 224, 224);
+    min-height: 100%;
+    padding: 5px;
+}
+
+
+.TextBox{
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 50px;
+    border-radius: 7px;
+    margin-left: 50px;
+}
+.TextBox input[type=text]{
+    width: 330px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    margin: 0 0 0 0.5rem;
+    outline: none;
+}
+
+
+.DateBtnBox{
+    width: 350px;
+    height: 90px;
+    margin: 5px 0;
+    margin-left: 50px;
+}
+.DateBtn{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+.DateBtn:hover{
+    background-color: rgb(244, 244, 244);
+}
+.DateBtnBox p{
+    margin: 0;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(15, 76, 129);
+}
+
+
+.BtnBox{
+    width: 450px;
+    height: 70px;
+    position: relative;
+}
+.BtnBox button{
+    width: 100px;
+    height: 50px;
+    margin: 0 .2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    /* position: absolute; */
+    /* right: 0; */
+}
+.BtnBox .Cancle{
+    position: absolute;
+    right: 1rem;
+}
+.BtnBox .Search{
+    position: absolute;
+    right: 8rem;
+}
+.BtnBox button:hover{
+    background-color: rgb(244, 244, 244); 
+}
+
+.UserInfo{
+    width: 100%;
+    display: flex;
+}
+
+.UserNameBox{
+    width: 300px;
+}
+.UserNameBox h1{
+    margin-bottom: 0;
+}
+.UserNameBox h6{
+    margin-top: 0;
+}
+
+.LogOutBox{
+    width: 150px;
+}
+.LogOutBtn{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    /* font-size: 20px; */
+    display: inline-block;
+    text-align: center;
+
+}
+.LogOutBtn:hover{
+    background-color: rgb(244, 244, 244);
+}
+
+.AdminInfo{
+    width: 350px;
+    margin: 0 auto;
+}
+.AdminInfo a{
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    width: 300px;
+    height: 47px;
+    display: inline-block;
+    margin: 5px auto;
+    text-align: center;
+}
+.AdminInfo a:hover{
+    background-color: rgb(244, 244, 244);
 }

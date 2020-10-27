@@ -2,41 +2,70 @@ import React, {useState} from "react";
 
 import '../css/popover.css';
 
-function Popover({pk}){
+function Popover({pk, efunc}){
     var contents = null;
-    if(pk == 3){
+    if(pk === 1){
         contents = (
           <div>
             <h1>Filter</h1>
             <form>
-                <input type="text" id="search" name="Search" placeholder="Search" />
-                <a className="dateBtn">Date</a>
-                <button type="submit">Search</button>
-                <button type="button">Cancle</button>
+                <div className="TextBox">
+                    <input type="text" id="search" name="Search" placeholder="Search" />
+                </div>
+                <div className="DateBtnBox">
+                    <button type="button" className="DateBtn">Date</button>
+                    <p>Date : None</p>
+                </div>
+                <div className="BtnBox">
+                    <button className="Search" type="submit">Search</button>
+                    <button className="Cancle" type="button" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            efunc(pk);
+                        }
+                    }>Cancle</button>
+                </div>
             </form>
           </div>
         )
     }
-    if(pk == 4){
+    if(pk === 2){
         contents = (
           <div>
             <h1>Setting</h1>
             <form>
                 <h3>추후 구현하는 것으로</h3>
-                <button type="submit">Search</button>
-                <button type="button">Cancle</button>
+                <div className="BtnBox">
+                    <button className="Search" type="submit">Search</button>
+                    <button className="Cancle" type="button" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            efunc(pk);
+                        }
+                    }>Cancle</button>
+                </div>
             </form>
           </div>
         )
     }
-    if(pk == 5){
+    if(pk === 3){
         contents = (
           <div>
-            <h1>UserName</h1>
-            <div>
-                <a>Log Out</a>
+            <div className="UserInfo">
+                <div className="UserNameBox">
+                    <h1>UserName</h1>
+                    <h6>(email)</h6>
+                </div>
+                <div className="LogOutBox">
+                    <a className="LogOutBtn" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            efunc(pk);
+                        }
+                    }>LogOut</a>
+                </div>
             </div>
-            <div>
+            <div className="AdminInfo">
                 <a>Change Password</a>
                 <a>Change UserName</a>
                 <a>계정에 연결된 아이디 관리</a>

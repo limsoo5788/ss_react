@@ -213,36 +213,45 @@ function Menu({confirm}){
         );
       }
     }else if(items.key === 3){
-      if(visiable === false && popoverkey != 3){
+      if(visiable === false && popoverkey !== 1){
         setVisiable(true);
-        setPopoverkey(3);
-      }else if(visiable === true && popoverkey != 3){
-        setPopoverkey(3);
+        setPopoverkey(1);
+      }else if(visiable === true && popoverkey !== 1){
+        setPopoverkey(1);
       }else{
         setVisiable(false);
         setPopoverkey(0);
       }
     }else if(items.key === 4){
-      if(visiable === false && popoverkey != 4){
+      if(visiable === false && popoverkey !== 2){
         setVisiable(true);
-        setPopoverkey(4);
-      }else if(visiable === true && popoverkey != 4){
-        setPopoverkey(4);
+        setPopoverkey(2);
+      }else if(visiable === true && popoverkey !== 2){
+        setPopoverkey(2);
       }else{
         setVisiable(false);
         setPopoverkey(0);
       }
     }else{
-      if(visiable === false && popoverkey != 5){
+      if(visiable === false && popoverkey !== 3){
         setVisiable(true);
-        setPopoverkey(5);
-      }else if(visiable === true && popoverkey != 5){
-        setPopoverkey(5);
+        setPopoverkey(3);
+      }else if(visiable === true && popoverkey !== 3){
+        setPopoverkey(3);
       }else{
         setVisiable(false);
         setPopoverkey(0);
       }
     }
+  }
+
+
+  const eventCancle = (typeKey) => {
+    if(typeKey === 3){
+      console.log("로그아웃 실행!");
+    }
+    setVisiable(false);
+    setPopoverkey(0);
   }
 
 
@@ -252,14 +261,14 @@ function Menu({confirm}){
         {
           confirm ?
           menus.map((item) => (
-            <MenuItems key={item.key} item={item} efuc={eventMenus}  />
+            <MenuItems key={item.key} item={item} efunc={eventMenus}  />
           )          
           ) : <div></div>
         }
       </div>
       <div>
         {
-          visiable ? <Popover pk = {popoverkey}/> : <div></div>
+          visiable ? <Popover pk = {popoverkey} efunc={eventCancle}/> : <div></div>
         }
       </div>
     </div>
@@ -268,12 +277,12 @@ function Menu({confirm}){
   )
 }
 
-function MenuItems({item, efuc}){
+function MenuItems({item, efunc}){
   return(
     <a className="Items" onClick={
       (e) =>{
         e.preventDefault();
-        efuc(item);
+        efunc(item);
       }
     }>
       <span>{item.alt}</span>
