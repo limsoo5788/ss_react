@@ -3,7 +3,6 @@ import Menu from '../Menu'
 const React = require('react');
 
 function Menus() {
-    const [activepopover, setAvtivepopover] = React.useState(0);
     const [menus, setMenus] = React.useState(
         [
             {

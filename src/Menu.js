@@ -10,18 +10,17 @@ function Menu(props) {
     //팝오버가 나타나 있는지 확인하기 위한 상태값
     const [ispop, setIspop] = React.useState(0);
 
-    const onClick = () =>{
-        {ispop? setIspop(0) : setIspop(1)}
+    const onClick = (e) => {
+        { ispop ? setIspop(0) : setIspop(1) }
+        console.log(e.clientX)
     };
     return (
-        <div>
         <button
             className="menuButton"
-            onClick = {onClick}>
-            {ispop? alt: "팝업없음"}
+            onClick={onClick}
+        >
+            {ispop ? alt : "팝업없음"}
         </button>
-        <a>testttt</a>
-        </div>
     );
 }
 
