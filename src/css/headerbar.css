@@ -12,7 +12,7 @@
     background-color: blue;
     border-left: black 1px solid;
 }
-.menuButton{
+.Menus Button{
     float: right;
     border: 1px solid black;
     border-radius: 50%;
@@ -21,6 +21,4 @@
     font-size: 15px;
     text-align: center;
     margin: 0 0.2rem;
-}
-.menuPopover{
 }
