@@ -28,7 +28,7 @@ function Menu(props) {
     //타입에따라 정해진 메뉴컨텐츠가 나오도록하기 위한 switch문
     switch(type){
         case 1:
-            console.log("테스트성공!")
+            
             break;
         case 2:
             break;
