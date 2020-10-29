@@ -64,44 +64,6 @@ function Menu({confirm}){
         type : 3,
       },
     ]
-    // {
-    //   "Refresh" : {
-    //     key : 0,
-    //     img : "img_path",
-    //     alt : "Refresh",
-    //     type : 0,
-    //   },
-    //   "See" : {
-    //     key : 1,
-    //     img : "img_path",
-    //     alt : "See",
-    //     type : 0,
-    //   },
-    //   "Complite" : {
-    //     key : 2,
-    //     img : "img_path",
-    //     alt : "Complite",
-    //     type : 0,
-    //   },
-    //   "Fillter" : {
-    //     key : 3,
-    //     img : "img_path",
-    //     alt : "Fillter",
-    //     type : 1,
-    //   },
-    //   "Setting" : {
-    //     key : 4,
-    //     img : "img_path",
-    //     alt : "Setting",
-    //     type : 2,
-    //   },
-    //   "User" : {
-    //     key : 5,
-    //     img : "img_path",
-    //     alt : "User",
-    //     type : 3,
-    //   },
-    // }
   );
 
   const [visiable, setVisiable] = useState(false);
@@ -115,102 +77,14 @@ function Menu({confirm}){
       console.log("보기 방식 변경!");
     }else if(items.key == 2){
       if(items.alt === 'Complite'){
-        // let item = items;
-        // let menu = menus;
-        // console.log(item);
-        // item.alt = "Ing"
-        // console.log(item.alt);
-        // console.log(menu);
-        // setMenus(menu);
-        setMenus(
-          [
-            {
-              key : 0,
-              img : "img_path",
-              alt : "Refresh",
-              type : 0,
-            },
-            {
-              key : 1,
-              img : "img_path",
-              alt : "See",
-              type : 0,
-            },
-            {
-              key : 2,
-              img : "img_path",
-              alt : "Ing",
-              type : 0,
-            },
-            {
-              key : 3,
-              img : "img_path",
-              alt : "Fillter",
-              type : 1,
-            },
-            {
-              key : 4,
-              img : "img_path",
-              alt : "Setting",
-              type : 2,
-            },
-            {
-              key : 5,
-              img : "img_path",
-              alt : "User",
-              type : 3,
-            },
-          ]
-        );
+        const menu = menus.slice();
+        menu[2].alt = "Ing";
+        setMenus(menu);
       }
       else{
-        // let item = items;
-        // let menu = menus;
-        // console.log(item);
-        // item.alt = "Complite"
-        // console.log(item.alt);
-        // console.log(menu);
-        // setMenus(menu);
-        setMenus(
-          [
-            {
-              key : 0,
-              img : "img_path",
-              alt : "Refresh",
-              type : 0,
-            },
-            {
-              key : 1,
-              img : "img_path",
-              alt : "See",
-              type : 0,
-            },
-            {
-              key : 2,
-              img : "img_path",
-              alt : "Complite",
-              type : 0,
-            },
-            {
-              key : 3,
-              img : "img_path",
-              alt : "Fillter",
-              type : 1,
-            },
-            {
-              key : 4,
-              img : "img_path",
-              alt : "Setting",
-              type : 2,
-            },
-            {
-              key : 5,
-              img : "img_path",
-              alt : "User",
-              type : 3,
-            },
-          ]
-        );
+        const menu = menus.slice();
+        menu[2].alt = "Complite";
+        setMenus(menu);
       }
     }else if(items.key === 3){
       if(visiable === false && popoverkey !== 1){
