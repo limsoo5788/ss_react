@@ -14,7 +14,7 @@ function Main(){
 
 function NonLogined(){
     // var contents = null;
-    var contents = <LogIn />
+    var contents = <Register />
     return(
         <div className="NonLogined">
             <div className="NonLoginedContents">
@@ -44,12 +44,47 @@ function LogIn(){
                 <div className="InputBox">
                     <input type="password" id="pw" name="pw" placeholder="Password" />
                 </div>
-                <input type="Submit" value="Login" />
+                <input type="submit" value="Login" />
             </form>
             <div className="CASBox">
                 <p>New user? <a>Create account</a> </p>
                 <p>Forgot password? <a>Click here to reset it.</a> </p>
             </div>
+        </div>
+    )
+}
+
+function Register(){
+    return(
+        <div className="RegisterContents">
+            <h1>Create Account</h1>
+            <h3>
+                Already an User?
+                <a>LogIn</a>
+            </h3>
+            <form className="RegisterForm">
+                <div className="InputBox">
+                    <input type="text" id="id" name="id" placeholder="Input Email" />
+                </div>
+                <label for="id">등록되어있는 이메일 입니다.</label>
+                <div className="InputBox">
+                    <input type="text" id="username" name="username" placeholder="Input Username" />
+                </div>
+                <label for="username">등록되어있는 Username 입니다.</label>
+                <div className="InputBox">
+                    <input type="password" id="pw" name="pw" placeholder="Password" />
+                </div>
+                <label for="pw">비밀번호가 일치하지 않습니다.</label>
+                <div className="InputBox">
+                    <input type="password" id="pwCheck" name="pwCheck" placeholder="Password Check" />
+                </div>
+                <div>
+                    <button type="button" id="PhoneApi">*Phone Numbers</button>
+                </div>
+                <div>
+                    <input type="submit" value="Create" />
+                </div>
+            </form>
         </div>
     )
 }
