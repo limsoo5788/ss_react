@@ -5,7 +5,7 @@ import "../css/nonlogined.css"
 
 function NonLogined(){
     // var contents = null;
-    var contents = <EmailForPassword />
+    var contents = <ChangePassword />
     return(
         <div className="NonLogined">
             <div className="NonLoginedContents">
@@ -98,6 +98,26 @@ function EmailForPassword(){
             </div>
             <div>
                     <input type="submit" value="Send" />
+            </div>
+        </div>
+    )
+}
+
+function ChangePassword(){
+    return(
+        <div className="CPContents">
+            <h1>Change Password</h1>
+            <div className="InputBox">
+                <input type="password" id="pw" name="pw" placeholder="Password" />
+            </div>
+            <div className="InputBox">
+                <input type="password" id="pwCheck" name="pwCheck" placeholder="Password Check" />
+            </div>
+            <div className="InputLabel">                    
+                <label for="pw">비밀번호가 일치하지 않습니다.</label>
+            </div>
+            <div>
+                    <input type="submit" value="Change!" />
             </div>
         </div>
     )
