@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
 import NonLogined from './nonlogined.js';
-import Onlogin from './Onlogin'
+import Onlogin from './onlogin'
 import '../css/main.css';
 
 function Main(){

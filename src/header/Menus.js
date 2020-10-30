@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import '../css/Headerbar.css';
-import Menu from '../Menu'
+import Menu from '../menu'
 const React = require('react');
 
 function Menus() {
