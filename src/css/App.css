@@ -1,7 +1,8 @@
 .App{
-    height: 100vh;
+    height: 1080px;
     width: 1890px;
     margin: 0 auto;
+    border: black 1px solid;
 }
 .PopOver{
     border: black 1px solid;

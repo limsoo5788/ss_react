@@ -5,9 +5,10 @@ const React = require('react');
 
 function Nonlogin(props) {
     let contents = null;
-    if(props.children == "test"){
+    if(props.children == "Login"){
         contents=(
             <>
+                
             </>
         )
     }
