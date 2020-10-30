@@ -5,8 +5,7 @@ import '../css/header.css';
 import Popover from '../popover/popover';
 import { Link } from 'react-router-dom';
 
-function Headerbar() {
-  const [confirm, setConfirm] = useState(true);
+function Headerbar({confirm}) {
   return (
     <div className="Headerbar">
 
