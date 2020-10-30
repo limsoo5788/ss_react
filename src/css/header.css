@@ -14,7 +14,10 @@
 .Logo {
     width: 200px;
 }
-.Logo img, .Menu h1{
+.Logo img{
+    width: 35%;
+}
+.Menu h1{
     font-size: 25px;
 }
 
