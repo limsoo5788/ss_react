@@ -1,17 +1,16 @@
 import './css/App.css';
-import Hearderbar from './header/Headerbar';
-import Main from './main/main';
-import Footerbar from './footer/Footerbar';
-const React = require('react');
-
+import Footerbar from './footer/footerbar';
+import Hearderbar from './header/headerbar';
+import Main from "./main/main"
+// const React = require('react');
 function App() {
-  const [logined, setLogined] = React.useState(1);
-  const [confirm, setConfirm] = React.useState(1);
+  //const [logined, setLogined] = React.useState(1);
+  //const [confirm, setConfirm] = React.useState(1);
 
   return (
     <div className="App">
-      <Hearderbar confirm={confirm}/>
-      <Main confirm={confirm} logined={logined}/>
+      <Hearderbar/>
+      <Main />
       <Footerbar/>
     </div>
   );

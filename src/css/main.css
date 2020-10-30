@@ -1,15 +1,8 @@
-.Main{
-    width: 100%;
-    height: 100%;
-    margin-top: 0px;
-    overflow: hidden;
-}
-.Nonlogin{
-    border: black 1px solid;
-    width: 1500px;
-    height: 700px;
-    margin: 5% auto;
-    vertical-align: middle;
+
+.Main {
+    min-width: 1910px;
+    max-width: 100vw;
+    height: 90vh;
 }
 .Onlogin{
     overflow: auto;
