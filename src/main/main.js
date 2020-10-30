@@ -14,7 +14,7 @@ function Main(){
 
 function NonLogined(){
     // var contents = null;
-    var contents = <Register />
+    var contents = <EmailForPassword />
     return(
         <div className="NonLogined">
             <div className="NonLoginedContents">
@@ -66,17 +66,23 @@ function Register(){
                 <div className="InputBox">
                     <input type="text" id="id" name="id" placeholder="Input Email" />
                 </div>
-                <label for="id">등록되어있는 이메일 입니다.</label>
+                <div className="InputLabel">
+                    <label for="id">등록되어있는 이메일 입니다.</label>
+                </div>
                 <div className="InputBox">
                     <input type="text" id="username" name="username" placeholder="Input Username" />
                 </div>
-                <label for="username">등록되어있는 Username 입니다.</label>
+                <div className="InputLabel">
+                    <label for="username">등록되어있는 Username 입니다.</label>
+                </div>
                 <div className="InputBox">
                     <input type="password" id="pw" name="pw" placeholder="Password" />
                 </div>
-                <label for="pw">비밀번호가 일치하지 않습니다.</label>
                 <div className="InputBox">
                     <input type="password" id="pwCheck" name="pwCheck" placeholder="Password Check" />
+                </div>
+                <div className="InputLabel">                    
+                    <label for="pw">비밀번호가 일치하지 않습니다.</label>
                 </div>
                 <div>
                     <button type="button" id="PhoneApi">*Phone Numbers</button>
@@ -85,6 +91,23 @@ function Register(){
                     <input type="submit" value="Create" />
                 </div>
             </form>
+        </div>
+    )
+}
+
+function EmailForPassword(){
+    return(
+        <div className="EFPContents">
+            <h1>User email</h1>
+            <div className="InputBox">
+                    <input type="text" id="id" name="id" placeholder="Input Email" />
+            </div>
+            <div className="InputLabel">
+                    <label for="id">유효하지 않는 이메일 입니다.</label>
+            </div>
+            <div>
+                    <input type="submit" value="Send" />
+            </div>
         </div>
     )
 }
