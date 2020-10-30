@@ -5,7 +5,7 @@ import "../css/nonlogined.css"
 
 function NonLogined(){
     // var contents = null;
-    var contents = <ChangePassword />
+    var contents = <ChangeEmail />
     return(
         <div className="NonLogined">
             <div className="NonLoginedContents">
@@ -103,7 +103,7 @@ function EmailForPassword(){
     )
 }
 
-function ChangePassword(){
+function ResetPassword(){
     return(
         <div className="CPContents">
             <h1>Change Password</h1>
@@ -117,7 +117,48 @@ function ChangePassword(){
                 <label for="pw">비밀번호가 일치하지 않습니다.</label>
             </div>
             <div>
-                    <input type="submit" value="Change!" />
+                <input type="submit" value="Change!" />
+            </div>
+        </div>
+    )
+}
+
+function Confirm(){
+    return(
+        <div className="ACContents">
+            <h1>Hello Username</h1>
+            <div className="Discription">
+                You have not confirmed your account(Register Email) yet.<br />
+                Before you can access this application you need to confirm your account.<br />
+                Check your email, you should have received an email with a confirmation link
+            </div>
+            <div className="Link">
+                Need another confirmation email?
+                <a>Click here</a>
+            </div>
+            <div className="Link">
+                Need change account?
+                <a>Click here</a>
+            </div>
+        </div>
+    )
+}
+
+function ChangeEmail(){
+    return(
+        <div className="CEContents">
+            <h1>Change Email</h1>
+            <div className="InputBox">
+                    <input type="text" id="id" name="id" placeholder="Input Current Email" />
+            </div>
+            <div className="InputBox">
+                    <input type="text" id="id" name="id" placeholder="Input New Email" />
+            </div>
+            <div className="InputLabel">
+                <label for="id">유효하지 않는 이메일 입니다.</label>
+            </div>
+            <div>
+                <input type="submit" value="Change!" />
             </div>
         </div>
     )

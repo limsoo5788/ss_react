@@ -33,12 +33,12 @@
 }
 
 /* 로그인 컴포넌트 디자인 */
-.LoginContents, .EFPContents, .CPContents{
+.LoginContents, .EFPContents, .CPContents, .ACContents, .CEContents{
     height: 583px;
     margin-top: 100px;
     padding: 10px;
 }
-.LoginContents h1, .RegisterContents h1, .EFPContents h1, .CPContents h1{
+.LoginContents h1, .RegisterContents h1, .EFPContents h1, .CPContents h1, .ACContents h1, .CEContents h1{
     font-size: 70px;
     margin: 1rem 0 1.5rem 0;
 }
@@ -65,10 +65,10 @@ input[type=submit]{
     font-weight: bold;
     font-size: 1rem;
 }
-.CASBox p a, .RegisterContents h3 a{
+.CASBox p a, .RegisterContents h3 a, .Link a{
     color: rgb(0, 0, 255);
 }
-.CASBox p a:hover, .RegisterContents h3 a:hover{
+.CASBox p a:hover, .RegisterContents h3 a:hover, .Link a:hover{
     color: rgb(0, 188, 255);
 }
 
@@ -81,4 +81,19 @@ input[type=submit]{
 .InputLabel{
     height: 25px;
     margin: 0;
+}
+
+/* 비밀번호를 찾기 위한 이메일 입력 컴포넌트(EmailForPassword) 디자인  */
+
+/* 비밀번호 변경 컴포넌트(ChangePassword) 디자인 */
+
+/* 계정 인증 설명 컴포넌트(ACContents) 디자인 */
+.Discription, .Link{
+    margin: 1rem 0;
+}
+.Discription{
+    font-size: 1.3rem;
+}
+.Link{
+    font-size: 1.2rem;
 }
