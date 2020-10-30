@@ -12,7 +12,9 @@ function Headerbar({confirm}) {
       <div className="HeaderContents">
         <Logo />
         <div className="Middle"></div>
-        <Menu confirm = {confirm}/>
+        {
+          confirm ? (<Menu confirm = {confirm}/>) : (<div className="Menu"></div>)
+        }
       </div>
     </div>
   );

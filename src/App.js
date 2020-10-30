@@ -6,7 +6,7 @@ import React, {useState} from "react";
 
 function App() {
   const [logined, setLogined] = useState(false);
-  const [confirm, setConfirm] = useState(true);
+  const [confirm, setConfirm] = useState(false);
 
   return (
     <div className="App">
