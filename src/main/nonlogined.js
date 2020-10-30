@@ -1,17 +1,22 @@
 import React, {useState} from "react";
-
+import { Link, Route } from 'react-router-dom';
 import "../css/nonlogined.css"
 
 
 function NonLogined(){
     // var contents = null;
-    var contents = <ChangeEmail />
+    // var contents = <ChangeEmail />
     return(
         <div className="NonLogined">
             <div className="NonLoginedContents">
                 <div className="ContentsBox">
                     <div className="Contents">
-                        {contents}
+                        <Route exact path="/" component={LogIn}/>
+                        <Route path="/register" component={Register}/>
+                        <Route path="/emailForPassword" component={EmailForPassword}/>
+                        <Route path="/resetPassword" component={ResetPassword}/>
+                        <Route path="/confrim" component={Confirm}/>
+                        <Route path="/changeEmail" component={ChangeEmail}/>
                     </div>
                     <div className="IconBox">
                         <div className="Icon">
