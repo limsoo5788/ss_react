@@ -15,7 +15,7 @@ function NonLogined(){
                         <Route path="/register" component={Register}/>
                         <Route path="/emailForPassword" component={EmailForPassword}/>
                         <Route path="/resetPassword" component={ResetPassword}/>
-                        <Route path="/confrim" component={Confirm}/>
+                        <Route path="/confirm" component={Confirm}/>
                         <Route path="/changeEmail" component={ChangeEmail}/>
                     </div>
                     <div className="IconBox">
@@ -43,8 +43,8 @@ function LogIn(){
                 <input type="submit" value="Login" />
             </form>
             <div className="CASBox">
-                <p>New user? <a>Create account</a> </p>
-                <p>Forgot password? <a>Click here to reset it.</a> </p>
+                <p>New user? <Link to="register">Create account</Link> </p>
+                <p>Forgot password? <Link to="emailForPassword">Click here to reset it.</Link></p>
             </div>
         </div>
     )
@@ -56,7 +56,7 @@ function Register(){
             <h1>Create Account</h1>
             <h3>
                 Already an User?
-                <a>LogIn</a>
+                <Link to="/">LogIn</Link>
             </h3>
             <form className="RegisterForm">
                 <div className="InputBox">
@@ -143,7 +143,7 @@ function Confirm(){
             </div>
             <div className="Link">
                 Need change account?
-                <a>Click here</a>
+                <Link to="/changeEmail">Click here</Link>
             </div>
         </div>
     )
