@@ -4,20 +4,22 @@ const React = require('react');
 
 function Onlogin(props) {
     let contents = null;
+    const delete_memo_id = {dmi:null};
+    const [box_visible, setbox_visible] = React.useState(0);
     return (
         <div className="Onlogin">
-            <MainTop/>
-            <MainBottom/>
+            <MainTop setbox_visible={setbox_visible}/>
+            <MainBottom box_visible={box_visible}/>
         </div>
     )
 }
 
-const MainTop = () =>{
+const MainTop = (props) =>{
     return (
         <div className="MainTop">
             <AddBtn/>
             <DateView/>
-            <MemoTrashBorder/>
+            <MemoDeleteBorder setbox_visible={props.setbox_visible}/>
         </div>
     )
 }
@@ -36,18 +38,43 @@ const DateView = () => {
         </div>
     )
 }
-const MemoTrashBorder = () => {
+const MemoDeleteBorder = (props) => {
+    //props.setbox_visible
     return(
-        <div className="MemoTrashBorder">
-
+        <div className="MemoDeleteBorder">
+            <MemoTrashCan/>
+            <MemoDelete/>
+            <NoMemoDelete/>
         </div>
+    )
+}
+const MemoTrashCan = () => {
+    return(
+        <button className="MemoTrashCan">
+
+        </button>
+    )
+}
+const MemoDelete = () => {
+    return(
+        <button className="MemoDelete">
+            
+        </button>
+    )
+}
+const NoMemoDelete = () => {
+    return(
+        <button className="NoMemoDelete">
+            
+        </button>
     )
 }
 
 
 
 
-const MainBottom = () =>{
+const MainBottom = (props) =>{
+    //props = box_visible
     return (
         <div className="MainBottom">
             <Memo/>

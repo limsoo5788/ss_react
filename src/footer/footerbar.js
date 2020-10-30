@@ -1,4 +1,4 @@
-import '../css/App.css';
+import '../css/Footerbar.css';
 
 function Footerbar(){
     return(

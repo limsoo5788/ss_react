@@ -5,19 +5,6 @@ const React = require('react');
 
 function Nonlogin(props) {
     let contents = null;
-    if(props.children == "Login"){
-        contents=(
-            <>
-                
-            </>
-        )
-    }
-    else{
-        contents = (
-            <>
-            </>
-        )
-    }
     return (
         <div className="Nonlogin">
             <Route exact path="/" component={Login}/>
