@@ -5,8 +5,8 @@ import Main from "./main/main"
 import React, {useState} from "react";
 
 function App() {
-  const [logined, setLogined] = useState(false);
-  const [confirm, setConfirm] = useState(false);
+  const [logined, setLogined] = useState(true);
+  const [confirm, setConfirm] = useState(true);
 
   return (
     <div className="App">
