@@ -78,6 +78,12 @@ const MainBottom = (props) =>{
     return (
         <div className="MainBottom">
             <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
         </div>
     )
 }
