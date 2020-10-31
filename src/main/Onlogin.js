@@ -1,11 +1,11 @@
-import '../css/main.css';
-const React = require('react');
+import '../css/onlogin.css';
+import {useState} from "react";
 
 
-function Onlogin(props) {
+function OnLogin(props) {
     let contents = null;
     const delete_memo_id = {dmi:null};
-    const [box_visible, setbox_visible] = React.useState(0);
+    const [box_visible, setbox_visible] = useState(false);
     return (
         <div className="Onlogin">
             <MainTop setbox_visible={setbox_visible}/>
@@ -88,4 +88,4 @@ const Memo = () =>{
         </div>
     )
 }
-export default Onlogin;
+export default OnLogin;

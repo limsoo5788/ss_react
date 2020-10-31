@@ -1,0 +1,51 @@
+.Onlogin{
+    overflow: auto;
+    margin: 0 50px;
+    border: black 1px solid;
+
+}
+.MainTop{
+    min-height: 139px;
+    border: red 1px solid;
+    display: flex;
+}
+.AddBtn{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 50px;
+    float: left;
+}
+.DateView{
+    border: black 1px solid;
+    border-radius: 50px;
+    width: 690px;
+    height: 90px;
+    float: left;
+    margin: 0 auto;
+}
+.MemoDeleteBorder{
+    min-width: 180px;
+    min-height: 60px;
+    border: black 1px solid;
+    float: right;
+}
+.MemoDeleteBorder button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    float: right;
+}
+
+.MainBottom{
+    min-height: 748px;
+    border: blue 1px solid;
+}
+.Memo{
+    width: 1694px;
+    min-height: 719px;
+    border: black 1px solid;
+    margin: 10px auto;
+}
