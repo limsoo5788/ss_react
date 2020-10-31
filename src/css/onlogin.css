@@ -1,6 +1,7 @@
 .Onlogin{
     overflow: auto;
     margin: 0 50px;
+    max-width: 100vw;
     border: black 1px solid;
 
 }
