@@ -1,12 +1,12 @@
 .Headerbar {
-    min-width: 1600px;
+    min-width: 1890px;
     max-width: 100vw;
     height: 70px;
     border-bottom: rgb(224, 224, 224) 1px solid;
 }
 
 .HeaderContents{
-    width: 1910px;
+    width: 1890px;
     display: flex;
     margin: 0 auto;
 }
