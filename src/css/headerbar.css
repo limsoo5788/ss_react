@@ -13,6 +13,8 @@
     width: 200px;
 }
 .Logo img{
+    min-height: 7vh;
+    /* min-width: 7vw; */
     max-width: 35%;
 }
 .Menu h1{
