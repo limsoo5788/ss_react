@@ -78,12 +78,24 @@ const MainBottom = (props) =>{
     return (
         <div className="MainBottom">
             <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
+            <Memo/>
         </div>
     )
 }
 const Memo = () =>{
     return (
         <div className="Memo">
+            <DataManagement/>
+        </div>
+    )
+}
+const DataManagement = () =>{
+    return (
+        <div className="DataManagement">
             
         </div>
     )

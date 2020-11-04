@@ -1,52 +1,61 @@
 .Onlogin{
     overflow: auto;
-    margin: 0 50px;
-    max-width: 100vw;
+    margin: 0 3vw;
+    min-height: 78vh;
     border: black 1px solid;
-
 }
 .MainTop{
-    min-height: 139px;
+    height: 10vw;
+    max-height: 90px;
     border: red 1px solid;
     display: flex;
 }
 .AddBtn{
-    width: 90px;
-    height: 90px;
+    width: 10vw;
+    max-width: 90px;
     border-radius: 50%;
     text-align: center;
-    font-size: 50px;
     float: left;
+    font-size: 1em;
 }
 .DateView{
     border: black 1px solid;
     border-radius: 50px;
-    width: 690px;
-    height: 90px;
+    width: 50vw;
+    max-width: 690px;
     float: left;
     margin: 0 auto;
 }
 .MemoDeleteBorder{
-    min-width: 180px;
-    min-height: 60px;
+    width: auto;
+    min-width: 20vw;
     border: black 1px solid;
     float: right;
 }
 .MemoDeleteBorder button{
-    width: 60px;
-    height: 60px;
+    width: 10vw;
+    height: 10vw;
+    max-width: 90px;
+    max-height: 90px;
     border-radius: 50%;
     text-align: center;
     float: right;
 }
-
 .MainBottom{
-    min-height: 748px;
-    border: blue 1px solid;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .Memo{
-    width: 1694px;
-    min-height: 719px;
     border: black 1px solid;
-    margin: 10px auto;
+    width: 20vw;
+    min-width: 150px;
+    height: auto;
+    margin: 1vw auto;
+}
+.DataManagement{
+    background-color: #837D7D;
+    width: 80%;
+    height: 50vw;
+    margin: 1vw auto
 }
