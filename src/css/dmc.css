@@ -1,0 +1,25 @@
+.DMCBack {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(117, 117, 117);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+}
+
+.DMC{
+    width: 50%;
+    height: 50%;
+    background-color: blue;
+    border: 2px solid blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 1;
+}

@@ -1,4 +1,5 @@
 import '../css/onlogin.css';
+import DMCBack from './dmc.js';
 import {useState} from "react";
 
 
@@ -76,15 +77,18 @@ const NoMemoDelete = () => {
 const MainBottom = (props) =>{
     //props = box_visible
     return (
-        <div className="MainBottom">
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-        </div>
+        <>
+            <div className="MainBottom">
+                <Memo/>
+                <Memo/>
+                <Memo/>
+                <Memo/>
+                <Memo/>
+                <Memo/>
+                <Memo/>
+            </div>
+            <DMCBack />
+        </>
     )
 }
 const Memo = () =>{
