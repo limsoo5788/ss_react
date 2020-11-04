@@ -14,7 +14,7 @@
 }
 .Logo img{
     min-height: 7vh;
-    /* min-width: 7vh; */
+    min-width: 7vw;
     max-width: 35%;
 }
 .Menu h1{
@@ -24,7 +24,6 @@
 .Middle{
     width: 1240px;
 }
-
 .Menu{
     width: 450px;
     display: flex;
