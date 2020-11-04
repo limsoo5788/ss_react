@@ -90,6 +90,13 @@ const MainBottom = (props) =>{
 const Memo = () =>{
     return (
         <div className="Memo">
+            <DataManagement/>
+        </div>
+    )
+}
+const DataManagement = () =>{
+    return (
+        <div className="DataManagement">
             
         </div>
     )
