@@ -97,6 +97,29 @@ const Memo = () =>{
 const DataManagement = () =>{
     return (
         <div className="DataManagement">
+            <DMTitleandbody/>
+            <DMTime/>
+            <DMOption/>
+        </div>
+    )
+}
+const DMTitleandbody = () =>{
+    return (
+        <div className="DMTitleandbody">
+            
+        </div>
+    )
+}
+const DMTime = () =>{
+    return (
+        <div className="DMTime">
+            
+        </div>
+    )
+}
+const DMOption = () =>{
+    return (
+        <div className="DMOption">
             
         </div>
     )
