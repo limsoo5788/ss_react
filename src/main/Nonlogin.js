@@ -95,15 +95,17 @@ function EmailForPassword(){
     return(
         <div className="EFPContents">
             <h1>User email</h1>
-            <div className="InputBox">
-                    <input type="text" id="id" name="id" placeholder="Input Email" />
-            </div>
-            <div className="InputLabel">
-                    <label for="id">유효하지 않는 이메일 입니다.</label>
-            </div>
-            <div>
-                    <input type="submit" value="Send" />
-            </div>
+            <form>
+                <div className="InputBox">
+                        <input type="text" id="id" name="id" placeholder="Input Email" />
+                </div>
+                <div className="InputLabel">
+                        <label for="id">유효하지 않는 이메일 입니다.</label>
+                </div>
+                <div>
+                        <input type="submit" value="Send" />
+                </div>
+            </form>
         </div>
     )
 }
@@ -112,18 +114,20 @@ function ResetPassword(){
     return(
         <div className="CPContents">
             <h1>Change Password</h1>
-            <div className="InputBox">
-                <input type="password" id="pw" name="pw" placeholder="Password" />
-            </div>
-            <div className="InputBox">
-                <input type="password" id="pwCheck" name="pwCheck" placeholder="Password Check" />
-            </div>
-            <div className="InputLabel">                    
-                <label for="pw">비밀번호가 일치하지 않습니다.</label>
-            </div>
-            <div>
-                <input type="submit" value="Change!" />
-            </div>
+            <form>
+                <div className="InputBox">
+                    <input type="password" id="pw" name="pw" placeholder="Password" />
+                </div>
+                <div className="InputBox">
+                    <input type="password" id="pwCheck" name="pwCheck" placeholder="Password Check" />
+                </div>
+                <div className="InputLabel">                    
+                    <label for="pw">비밀번호가 일치하지 않습니다.</label>
+                </div>
+                <div>
+                    <input type="submit" value="Change!" />
+                </div>
+            </form>
         </div>
     )
 }
@@ -153,18 +157,20 @@ function ChangeEmail(){
     return(
         <div className="CEContents">
             <h1>Change Email</h1>
-            <div className="InputBox">
-                    <input type="text" id="id" name="id" placeholder="Input Current Email" />
-            </div>
-            <div className="InputBox">
-                    <input type="text" id="id" name="id" placeholder="Input New Email" />
-            </div>
-            <div className="InputLabel">
-                <label for="id">유효하지 않는 이메일 입니다.</label>
-            </div>
-            <div>
-                <input type="submit" value="Change!" />
-            </div>
+            <form>
+                <div className="InputBox">
+                        <input type="text" id="id" name="id" placeholder="Input Current Email" />
+                </div>
+                <div className="InputBox">
+                        <input type="text" id="id" name="id" placeholder="Input New Email" />
+                </div>
+                <div className="InputLabel">
+                    <label for="id">유효하지 않는 이메일 입니다.</label>
+                </div>
+                <div>
+                    <input type="submit" value="Change!" />
+                </div>
+            </form>
         </div>
     )
 }
