@@ -83,6 +83,7 @@ const MainBottom = (props) =>{
             <Memo/>
             <Memo/>
             <Memo/>
+            <Memo/>
         </div>
     )
 }
