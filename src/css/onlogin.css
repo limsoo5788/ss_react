@@ -16,7 +16,7 @@
     border-radius: 50%;
     text-align: center;
     float: left;
-    font-size: 1em;
+    font-size: 1rem;
 }
 .DateView{
     border: black 1px solid;
@@ -54,7 +54,7 @@
     margin: 1vw auto;
 }
 .DataManagement{
-    width: 80%;
+    width: 90%;
     height: 50vw;
     margin: 1vw auto;
 }

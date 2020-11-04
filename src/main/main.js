@@ -1,11 +1,11 @@
 
 import React, {useState} from "react";
 import NonLogin from './nonlogin.js';
-// import OnLogin from './onlogin.js'
+import OnLogin from './onlogin.js'
 import '../css/main.css';
 
 function Main({logined, confirm}){
-    const contents=logined && confirm?(<NonLogin/>):(<NonLogin/>)
+    const contents=logined && confirm?(<OnLogin/>):(<NonLogin/>)
     return(
         <div className="Main">
             {contents}
