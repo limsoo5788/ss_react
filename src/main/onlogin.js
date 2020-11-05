@@ -76,36 +76,40 @@ const NoMemoDelete = () => {
 const MainBottom = (props) =>{
     //props = box_visible
     return (
+        // file:///D:/Util/Git/folder/htmltest/index.html
+        // https://hello-bryan.tistory.com/114
+        // 이거 넣어도 이쁠듯: https://stackoverflow.com/questions/57555389/change-height-of-element-in-css-grid-without-pushing-sibling-elements
         <div className="MainBottom">
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
-            <Memo/>
+            <Memo height={40}/>
+            <Memo height={60}/>
+            <Memo height={80}/>
+            <Memo height={120}/>
+            <Memo height={20}/>
+            <Memo height={30}/>
+            <Memo height={40}/>
         </div>
     )
 }
-const Memo = () =>{
+// style={{height: props.height}}
+const Memo = (props) =>{
     return (
-        <div className="Memo">
-            <DataManagement/>
+        <div className="Memo" style={{height: props.height}}>
+            <DataManagement height={props.height}/>
         </div>
     )
 }
-const DataManagement = () =>{
+const DataManagement = (props) =>{
     return (
         <div className="DataManagement">
-            <DMTitleandbody/>
-            <DMTime/>
-            <DMOption/>
+            <DMTitleandbody height={props.height}/>
+            {/* <DMTime/>
+            <DMOption/> */}
         </div>
     )
 }
-const DMTitleandbody = () =>{
+const DMTitleandbody = (props) =>{
     return (
-        <div className="DMTitleandbody">
+        <div className="DMTitleandbody" style={{height: props.height}}>
             
         </div>
     )
