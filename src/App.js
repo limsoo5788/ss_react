@@ -1,6 +1,6 @@
 import './css/App.css';
 import Footerbar from './footer/footerbar';
-import Hearderbar from './header/headerbar';
+import Headerbar from './header/headerbar';
 import Main from "./main/main"
 import React, {useState} from "react";
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Hearderbar confirm={confirm}/>
+      <Headerbar confirm={confirm}/>
       <Main logined={logined} confirm={confirm} />
       <Footerbar/>
     </div>

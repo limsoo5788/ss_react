@@ -53,28 +53,43 @@
     display: flex;
 }
 .DataManagement{
-    width: 90%;
-    height: auto;
-    margin: 1vw auto;
-}
-.DMTitleandbody{
     background-color: #837D7D;
     width: 100%;
-    height: 30vw;
+    padding: 1vw;
+    height: auto;
+}
+.DMTitleandBody{
+    width: 100%;
+    height: auto;
+}
+.DMTitle{
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+}
+.DMBody{
+    background-color: white;
+    font-size: 30px;
+    margin: 1vw 2vw;
 }
 .DMTime{
-    background-color: #E71515;
-    width: 100%;
-    height: 5vw;
-    margin-top: 1vw;
+    background-color: red;
+    margin: 1vw 2vw;
+    font-size: 20px;
+    border-radius: 10px;
 }
 .DMOption{
-    background-color: gold;
-    width: 100%;
-    height: 5vw;
-    margin-top: 1vw;
+    margin: 1vw 2vw;
 }
-.test{
-    width: 100px;
-    background-color: black;
+.alarmbutton{
+    float: left;
+    margin-right: 1vw;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    /* TODO:지속적인 관리 필요 대책 시급 항목이 많아지면 스크롤이 생길 수 있음 */
+    min-width: 30px;
+    min-height: 30px;
 }
