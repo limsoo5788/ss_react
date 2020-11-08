@@ -22,6 +22,12 @@
     max-width: 690px;
     float: left;
     margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.nowTime{
+    font-size: 4vw;
+    top: 0; bottom:0; margin-top:auto; margin-bottom:auto;
 }
 .MemoDeleteBorder{
     width: auto;
@@ -93,3 +99,4 @@
     min-width: 30px;
     min-height: 30px;
 }
+/* TODO: 메모가 많아지면 footerbar까지 overflow 되서 가려지는 현상이 발견함 */

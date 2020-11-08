@@ -2,7 +2,7 @@ import '../css/onlogin.css';
 import DMCBack from './dmc.js';
 import { useState } from "react";
 import { findAllByDisplayValue } from '@testing-library/react';
-
+import moment from 'moment';
 
 function OnLogin(props) {
     let contents = null;
@@ -36,8 +36,14 @@ const AddBtn = () => {
 const DateView = () => {
     return (
         <div className="DateView">
-
+            <DateViewclock/>
         </div>
+    )
+}
+const DateViewclock = () => {
+    const nowTime = moment().format('YYYY-MM-DD');
+    return (
+        <div className="nowTime">{nowTime}</div>
     )
 }
 const MemoDeleteBorder = (props) => {
