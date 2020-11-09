@@ -26,8 +26,16 @@
     position: relative;
 }
 .nowTime{
-    font-size: 4vw;
-    top: 0; bottom:0; margin-top:auto; margin-bottom:auto;
+    display: table; 
+    width: 100%; 
+    height: 100%; 
+    margin: 0 auto;
+}
+.nowTime span{
+    display: table-cell; 
+    text-align: center; 
+    vertical-align: middle;
+    font-size: 5vmin;
 }
 .MemoDeleteBorder{
     width: auto;
@@ -46,8 +54,8 @@
 .MainBottom{
     width: 100%;
     display: grid;
-    gap: 1%;
-    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+    grid-column-gap: 3%;
+    grid-template-columns: repeat(auto-fill, minmax(390px,1fr));
     grid-auto-rows: auto;
     grid-auto-flow: dense;
 }
@@ -55,12 +63,19 @@
     border: black 1px solid;
     width: 100%;
     height: auto;
-    margin: 1vw auto;
+    margin: 0 auto;
+    margin-top: 10%;
     display: flex;
+    flex-flow: column;
+}
+.MemoDeleteButton{
+    position: absolute;
+    z-index: 1;
+    transform: scale(3.0);
+    border-radius: 50%;
 }
 .DataManagement{
     background-color: #837D7D;
-    width: 100%;
     padding: 1vw;
     height: auto;
 }

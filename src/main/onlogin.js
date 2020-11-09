@@ -6,11 +6,10 @@ import moment from 'moment';
 
 function OnLogin(props) {
     let contents = null;
-    const delete_memo_id = { dmi: null };
     const [box_visible, setbox_visible] = useState(false);
     return (
         <div className="Onlogin">
-            <MainTop setbox_visible={setbox_visible} />
+            <MainTop setbox_visible={setbox_visible} box_visible={box_visible} />
             <MainBottom box_visible={box_visible} />
         </div>
     )
@@ -21,7 +20,7 @@ const MainTop = (props) => {
         <div className="MainTop">
             <AddBtn />
             <DateView />
-            <MemoDeleteBorder setbox_visible={props.setbox_visible} />
+            <MemoDeleteBorder setbox_visible={props.setbox_visible} box_visible={props.box_visible} />
         </div>
     )
 }
@@ -36,53 +35,81 @@ const AddBtn = () => {
 const DateView = () => {
     return (
         <div className="DateView">
-            <DateViewclock/>
+            <DateViewclock />
         </div>
     )
 }
 const DateViewclock = () => {
     const nowTime = moment().format('YYYY-MM-DD');
     return (
-        <div className="nowTime">{nowTime}</div>
-    )
-}
-const MemoDeleteBorder = (props) => {
-    //props.setbox_visible
-    return (
-        <div className="MemoDeleteBorder">
-            <MemoTrashCan />
-            <MemoDelete />
-            <NoMemoDelete />
+        <div className="nowTime">
+            <span>{nowTime}</span>
         </div>
     )
 }
-const MemoTrashCan = () => {
+const MemoDeleteBorder = (props) => {
+    //props.setbox_visible props.box_visible 
     return (
-        <button className="MemoTrashCan">
-
-        </button>
+        <div className="MemoDeleteBorder">
+            <MemoTrashCan setbox_visible={props.setbox_visible} box_visible={props.box_visible} />
+            <MemoDelete setbox_visible={props.setbox_visible} box_visible={props.box_visible} />
+            <NoMemoDelete setbox_visible={props.setbox_visible} box_visible={props.box_visible} />
+        </div>
     )
 }
-const MemoDelete = () => {
-    return (
-        <button className="MemoDelete">
+const MemoTrashCan = (props) => {
+    //props.setbox_visible props.box_visible}
+    const TrashCanOnclick = () => {
+        props.box_visible?props.setbox_visible(false):props.setbox_visible(true);
+    }
 
-        </button>
+    return (
+        <>
+        {props.box_visible ?
+        null : 
+        (<button className="MemoTrashCan" onClick={TrashCanOnclick}>
+            TrashCan
+        </button>)}
+        </>
+
     )
 }
-const NoMemoDelete = () => {
+const MemoDelete = (props) => {
+    //props.setbox_visible props.box_visible}
+    const MemoDeleteOnclick = () => {
+        props.box_visible?props.setbox_visible(false):props.setbox_visible(true)
+        // document.getElementsByClassName("클레스네임").map((each)=>{return()})
+    }
     return (
-        <button className="NoMemoDelete">
-
-        </button>
+        <>
+        {props.box_visible ?
+        (<button className="MemoDelete" onClick={MemoDeleteOnclick}>
+            Delete
+        </button>)
+        : null
+        }
+        </>
     )
 }
+const NoMemoDelete = (props) => {
+    //props.setbox_visible props.box_visible}
+    const NoMemoDeleteOnclick = () => {
+        props.box_visible?props.setbox_visible(false):props.setbox_visible(true);
+    }
+    return (
+        <>
+        {props.box_visible ?
+        (<button className="NoMemoDelete" onClick={NoMemoDeleteOnclick}>
+            Cancle
+        </button>)
+        : null
+        }
+        </>
 
-
-
-
+    )
+}
 const MainBottom = (props) => {
-    //props = box_visible
+    //props = box_visible 
     const [memos, setMemos] = useState(
         [
             {
@@ -110,12 +137,14 @@ const MainBottom = (props) => {
                     alarm: {
                         //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
                         //011010 이러면 트위터 페북 카톡 같은 방식으로
-                        setting: [false,false,false,false,false,false,false,true],
+                        setting: [false, false, false, false, false, false, false, true],
                         time: ["20190205123522"]
                     },
-                    sharing:[
-                        {email: "",
-                        level: 0}
+                    sharing: [
+                        {
+                            email: "",
+                            level: 0
+                        }
                     ],
                     commented: ""
                 }
@@ -152,7 +181,7 @@ const MainBottom = (props) => {
                         setting: [],
                         time: []
                     },
-                    sharing:[
+                    sharing: [
                     ],
                     commented: ""
                 }
@@ -178,12 +207,14 @@ const MainBottom = (props) => {
                     alarm: {
                         //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
                         //011010 이러면 트위터 페북 카톡 같은 방식으로
-                        setting: [false,false,true,false,true,false,false,true],
+                        setting: [false, false, true, false, true, false, false, true],
                         time: ["20190205123522", "1331313131353515"]
                     },
-                    sharing:[
-                        {email: "",
-                        level: 0}
+                    sharing: [
+                        {
+                            email: "",
+                            level: 0
+                        }
                     ],
                     commented: ""
                 }
@@ -225,27 +256,136 @@ const MainBottom = (props) => {
                     alarm: {
                         //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
                         //011010 이러면 트위터 페북 카톡 같은 방식으로
-                        setting: [true,true,false,true,false,false,false,true],
+                        setting: [true, true, false, true, false, false, false, true],
                         time: ["20190205123522"]
                     },
-                    sharing:[
-                        {email: "",
-                        level: 0}
+                    sharing: [
+                        {
+                            email: "",
+                            level: 0
+                        }
+                    ],
+                    commented: ""
+                }
+            },
+            {
+                titleandbody: {
+                    title: {
+                        checked: false,
+                        title: "제목1",
+                    },
+                    contents: [
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                    ]
+                },
+                date: {
+                    start: "20200114",
+                    end: "20200334"
+                },
+                detail: {
+                    alarm: {
+                        //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
+                        //011010 이러면 트위터 페북 카톡 같은 방식으로
+                        setting: [true, true, false, true, false, false, false, true],
+                        time: ["20190205123522"]
+                    },
+                    sharing: [
+                        {
+                            email: "",
+                            level: 0
+                        }
+                    ],
+                    commented: ""
+                }
+            },
+            {
+                titleandbody: {
+                    title: {
+                        checked: false,
+                        title: "제목1",
+                    },
+                    contents: [
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                        {
+                            level: 0,
+                            name: "공부하기1"
+                        },
+                    ]
+                },
+                date: {
+                    start: "20200114",
+                    end: "20200334"
+                },
+                detail: {
+                    alarm: {
+                        //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
+                        //011010 이러면 트위터 페북 카톡 같은 방식으로
+                        setting: [true, true, false, true, false, false, false, true],
+                        time: ["20190205123522"]
+                    },
+                    sharing: [
+                        {
+                            email: "",
+                            level: 0
+                        }
                     ],
                     commented: ""
                 }
             },
         ]
     );
+    const MemoDeleteButton = () => {
+            return (
+                <input type="checkbox" className="MemoDeleteButton"/>
+            )
+    }
     return (
         // file:///D:/Util/Git/folder/htmltest/index.html
         // https://hello-bryan.tistory.com/114
         // 이거 넣어도 이쁠듯: https://stackoverflow.com/questions/57555389/change-height-of-element-in-css-grid-without-pushing-sibling-elements
+        
         <>
             <div className="MainBottom">
                 {
                     memos.map((memo, num) => (
-                        <Memo key={num} memo={memo} />
+                        <div className="Memo">
+                            {props.box_visible? <MemoDeleteButton/>:null}
+                            <DataManagement key={num} memo={memo} />
+                        </div>
                     )
                     )
                 }
@@ -254,27 +394,19 @@ const MainBottom = (props) => {
         </>
     )
 }
-// style={{height: props.height}}
-const Memo = ({memo}) => {
-    return (
-        <div className="Memo" >
-            <DataManagement memo={memo} />
-        </div>
-    )
-}
-const DataManagement = ({memo}) => {
+const DataManagement = ({ memo }) => {
     const isdate = Boolean(memo.date.start) && Boolean(memo.date.end)
-    const isdetail = Boolean(memo.detail.alarm.time.length>0) || Boolean(memo.detail.sharing.length>0)
+    const isdetail = Boolean(memo.detail.alarm.time.length > 0) || Boolean(memo.detail.sharing.length > 0)
 
     return (
         <div className="DataManagement">
             <DMTitleandBody titleandbody={memo.titleandbody} />
-            {isdate? <DMTime date={memo.date}/>:null}
-            {isdetail? <DMOption detail={memo.detail}/>:null}
+            {isdate ? <DMTime date={memo.date} /> : null}
+            {isdetail ? <DMOption detail={memo.detail} /> : null}
         </div>
     )
 }
-const DMTitleandBody = ({titleandbody}) => {
+const DMTitleandBody = ({ titleandbody }) => {
     return (
         <div className="DMTitleandBody" >
             <DMTitle title={titleandbody.title} />
@@ -282,7 +414,7 @@ const DMTitleandBody = ({titleandbody}) => {
         </div>
     )
 }
-const DMTitle = ({title}) => {
+const DMTitle = ({ title }) => {
     return (
         <div className="DMTitle" >
             <input type="checkbox" className="DMTitleCheckbox" />
@@ -290,7 +422,7 @@ const DMTitle = ({title}) => {
         </div>
     )
 }
-const DMBody = ({contents}) => {
+const DMBody = ({ contents }) => {
     return (
         <div className="DMBody" >
             {
@@ -302,7 +434,7 @@ const DMBody = ({contents}) => {
         </div>
     )
 }
-const DMname = ({name}) => {
+const DMname = ({ name }) => {
     const [checkbox, setCheckbox] = useState(name.level)
     return (
         <div className="DMname" >
@@ -312,14 +444,14 @@ const DMname = ({name}) => {
     )
 }
 
-const DMTime = ({date}) => {
+const DMTime = ({ date }) => {
     return (
         <div className="DMTime">
             <a>{date.start}~{date.end}</a>
         </div>
     )
 }
-const DMOption = ({detail}) => {
+const DMOption = ({ detail }) => {
     // detail: {
     //     alarm: {
     //         //세팅부분을 배열말고 bit 처럼 표현해도 되지않을까?
@@ -350,59 +482,59 @@ const DMOption = ({detail}) => {
     //     )
     //     )
     // }
-    const getAlarmimg = (num) =>{
-        if(num===0){
+    const getAlarmimg = (num) => {
+        if (num === 0) {
             //email
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===1){
+        } else if (num === 1) {
             //kakao
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===2){
+        } else if (num === 2) {
             //line
-            return( 
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===3){
+        } else if (num === 3) {
             //f_message
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===4){
+        } else if (num === 4) {
             //instar_dm
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===5){
+        } else if (num === 5) {
             //twitter_dm
-            return( 
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===6){
+        } else if (num === 6) {
             //sms
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else if(num ===7){
+        } else if (num === 7) {
             //default
-            return(
-                    {/* 해당 아이콘 이미지 */}
+            return (
+                {/* 해당 아이콘 이미지 */ }
             )
-        }else{
+        } else {
             //error
         }
     }
     const alarmOnclick = () => {
 
     }
-    const alarms = Boolean(detail.alarm.time.length>0)?
-    detail.alarm.setting.map((name, num)=>(
-        Boolean(name)? <div key={num} className="alarmbutton" onClick={alarmOnclick}>img</div> : null
-    ))
-    :null
+    const alarms = Boolean(detail.alarm.time.length > 0) ?
+        detail.alarm.setting.map((name, num) => (
+            Boolean(name) ? <div key={num} className="alarmbutton" onClick={alarmOnclick}>img</div> : null
+        ))
+        : null
     return (
         <div className="DMOption">
             {alarms}
