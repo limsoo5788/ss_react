@@ -1,6 +1,6 @@
 import './css/App.css';
 import Footerbar from './footer/footerbar';
-import Headerbar from './header/headerbar';
+import {Headerbar} from './header/headerbar';
 import Main from "./main/main"
 import React, {useState} from "react";
 

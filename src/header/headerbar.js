@@ -170,4 +170,4 @@ function MenuItems({ item, efunc }) {
   )
 }
 
-export default Headerbar;
+export {Headerbar, MenuItems}
