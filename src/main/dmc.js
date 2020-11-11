@@ -58,16 +58,29 @@ function DMC(){
             editTexts = [...editTexts, schedules];
             setEditText(editTexts);
             e.target.value = "";
+            console.log(editTexts);
         }
+    }
+
+    const eventPopSchedule = (e) => {
+        console.log(e.target);
+        let editTexts = editText.slice();
+        console.log(editTexts);
+        console.log(editTexts[e.target.dataset["itemKey"]]);
+        // console.log(editTexts.slice(0, parseInt(e.target.dataset["itemKey"])));
+        editTexts = editTexts.slice(0, parseInt(e.target.dataset["itemKey"])).concat(editTexts.slice(parseInt(e.target.dataset["itemKey"])+1));
+        // editTexts.splice(editTexts.indexOf(parseInt(e.target.dataset["itemKey"])), 1);
+        console.log(editTexts);
+        setEditText(editTexts);
     }
 
 
     return(
         <div className="DMC">
             <div className="DMCInput">
-                <input type="checkbox" name="checkbox" id="checkbox" />
                 <div id="CBLabelBox">
-                    <label htmlFor="checkbox" id="CBLabel"></label>
+                    <input type="checkbox" name="checkbox" id="checkbox" />
+                    {/* <label htmlFor="checkbox" id="CBLabel"></label> */}
                     <input type="text" name="" id="" defaultValue={"title"} />
                 </div>
                 <div className="InfoContents">
@@ -82,6 +95,7 @@ function DMC(){
                                     <div className="EditInfoList" key={item.key}>
                                         <input type="checkbox" name="" className="" />
                                         <input type="text" id="" className="schedules" defaultValue={item.schedule} />
+                                        <span className="PopScheduleBtn" data-item-key={item.key} onClick={eventPopSchedule}>X</span>
                                     </div>
                                 )
                             })
