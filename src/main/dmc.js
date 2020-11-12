@@ -2,15 +2,15 @@ import {useState} from "react";
 import "../css/dmc.css";
 import {MenuItems} from "../header/headerbar";
 
-function DMCBack(){
+function DMCBack({efunc}){
     return(
         <div className="DMCBack">
-            <DMC />
+            <DMC efunc={efunc} />
         </div>
     )
 }
 
-function DMC(){
+function DMC({efunc}){
     const [memomenus, setMemoMenus] = useState(
         [
             {
@@ -54,23 +54,23 @@ function DMC(){
         // console.log(e.target.value);
         if(e.keyCode == 13){
             let editTexts = editText.slice();
-            const schedules = {key : editText.length, schedule : e.target.value};
+            let schedules;
+            if(editTexts.length === 0){
+                schedules = {key : 0, schedule : e.target.value};
+            }else{
+                schedules = {key : parseInt(editTexts[editTexts.length - 1].key) + 1, schedule : e.target.value };
+            }
             editTexts = [...editTexts, schedules];
             setEditText(editTexts);
             e.target.value = "";
-            console.log(editTexts);
+            // console.log(editTexts);
         }
     }
 
     const eventPopSchedule = (e) => {
         console.log(e.target);
         let editTexts = editText.slice();
-        console.log(editTexts);
-        console.log(editTexts[e.target.dataset["itemKey"]]);
-        // console.log(editTexts.slice(0, parseInt(e.target.dataset["itemKey"])));
-        editTexts = editTexts.slice(0, parseInt(e.target.dataset["itemKey"])).concat(editTexts.slice(parseInt(e.target.dataset["itemKey"])+1));
-        // editTexts.splice(editTexts.indexOf(parseInt(e.target.dataset["itemKey"])), 1);
-        console.log(editTexts);
+        editTexts = [...editTexts.slice(0, editTexts.findIndex((item) => {return item.key === parseInt(e.target.dataset["itemKey"])})), ...editTexts.slice(editTexts.findIndex((item) => {return item.key === parseInt(e.target.dataset["itemKey"])}) + 1)]
         setEditText(editTexts);
     }
 
@@ -115,8 +115,8 @@ function DMC(){
                         </div>
                         <div className="MiddleBox"></div>
                         <div className="SCBtnBox">
-                            <button type="button" name="submit" className="CancleBtn">Cancle</button>
-                            <button type="button" name="submit" className="SubmitBtn">Ok</button>
+                            <button type="button" name="button" className="CancleBtn" onClick={efunc} >Cancle</button>
+                            <button type="button" name="button" className="SubmitBtn">Ok</button>
                         </div>
                     </div>
                 </div>

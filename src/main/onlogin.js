@@ -368,11 +368,27 @@ const MainBottom = (props) => {
             },
         ]
     );
+
+    const [DMCVisible, setDMCVisible] = useState(false);
+
+
     const MemoDeleteButton = () => {
             return (
                 <input type="checkbox" className="MemoDeleteButton"/>
             )
     }
+
+    const eventDMCVisible = () => {
+        let visible = DMCVisible;
+        if(visible === true){
+            visible = false;
+        }else{
+            visible = true;
+        }
+        setDMCVisible(visible);
+    }
+
+
     return (
         // file:///D:/Util/Git/folder/htmltest/index.html
         // https://hello-bryan.tistory.com/114
@@ -382,7 +398,7 @@ const MainBottom = (props) => {
             <div className="MainBottom">
                 {
                     memos.map((memo, num) => (
-                        <div className="Memo">
+                        <div className="Memo" onClick={eventDMCVisible}>
                             {props.box_visible? <MemoDeleteButton/>:null}
                             <DataManagement key={num} memo={memo} />
                         </div>
@@ -390,7 +406,9 @@ const MainBottom = (props) => {
                     )
                 }
             </div>
-            {/* <DMCBack /> */}
+            {
+                DMCVisible ? <DMCBack efunc={eventDMCVisible} /> : null
+            }
         </>
     )
 }

@@ -24,7 +24,8 @@
 }
 .DMCInput {
     width: 60%;
-    height: 50%;
+    /* height: 50%; */
+    height: auto;
     background-color: rgb(209, 209, 209);
     border: 5px solid rgb(255, 255, 255);
     position: fixed;
@@ -67,10 +68,12 @@
 .InfoContents {
     box-sizing: border-box;
     width: 100%;
-    min-height: 50%;
+    max-height: 65%;
+    /* min-height: 50%; */
     background-color: rgb(255, 255, 255);
     border: 1.5px solid rgb(112, 112, 112);
     position: relative;
+    overflow: auto;
 }
 .EditInfo {
     box-sizing: border-box;
